@@ -1,4 +1,4 @@
-package orders;
+package com.kodilla.orders;
 
 import java.util.HashSet;
 

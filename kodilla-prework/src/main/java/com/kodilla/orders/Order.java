@@ -1,4 +1,4 @@
-package orders;
+package com.kodilla.orders;
 
 public class Order {
     private String orderNo;
