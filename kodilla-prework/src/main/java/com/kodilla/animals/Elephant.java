@@ -15,6 +15,6 @@ public class Elephant extends Animal {
 
     @Override
     public String toString() {
-        return  super.toString() + " " + name + " - ilość skonsumowanego dotychczas pożywienia i wody: " +"jedzenie: " + consumedFood + ", woda: " + consumedWater + ". ";
+        return  super.toString() + " " + name + " - ilość skonsumowanego dotychczas pożywienia oraz wody: " +"jedzenie: " + consumedFood + ", woda: " + consumedWater + ". ";
     }
 }
