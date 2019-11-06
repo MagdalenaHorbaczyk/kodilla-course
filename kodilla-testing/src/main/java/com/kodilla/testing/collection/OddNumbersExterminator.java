@@ -3,7 +3,7 @@ package com.kodilla.testing.collection;
 import java.util.ArrayList;
 
 public class OddNumbersExterminator {
-    int m;
+    private int m;
 
     public OddNumbersExterminator(int m) {
         this.m = m;
@@ -12,7 +12,7 @@ public class OddNumbersExterminator {
     ArrayList<Integer> numbers = new ArrayList<Integer>();
 
     public void exterminate(ArrayList<Integer> numbers) {
-        for (int n = 0; n < m; n++) {
+        for (int n = 0; n < numbers.size(); n++) {
             numbers.add(n);
             Integer temp = 0;
             temp = n;

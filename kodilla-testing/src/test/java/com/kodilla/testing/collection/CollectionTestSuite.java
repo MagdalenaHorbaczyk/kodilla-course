@@ -28,6 +28,8 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
+        int m = numbers.size();
+
         //Given
         OddNumbersExterminator test = new OddNumbersExterminator(0);
         test.exterminate(numbers);
