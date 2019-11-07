@@ -27,7 +27,7 @@ public class CollectionTestSuite {
 
     @Test
     public void testOddNumbersExterminatorEmptyList() {
-        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        ArrayList<Integer> numbers = new ArrayList<>();
         //Given
         OddNumbersExterminator test = new OddNumbersExterminator();
         test.exterminate(numbers);
@@ -37,25 +37,27 @@ public class CollectionTestSuite {
         //Then
         Assert.assertEquals(0, result);
     }
-
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
         ArrayList<Integer> numbers = new ArrayList<Integer>();
-        OddNumbersExterminator test = new OddNumbersExterminator();
+        numbers.add(2);
+        numbers.add(5);
+        numbers.add(17);
+        numbers.add(20);
+        numbers.add(51);
+        numbers.add(151);
+        numbers.add(200);
+
+        ArrayList<Integer> expectedList = new ArrayList<Integer>();
+
+        expectedList.add(2);
+        expectedList.add(20);
+        expectedList.add(200);
         //When
-        for (int n = 0; n < 5; n++) {
-            numbers.add(n);
-            Integer temp = 0;
-            temp = n;
-            if (temp % 2 == 1) {
-                numbers.remove(temp);
-            }
-        }
-        test.exterminate(numbers);
-        System.out.println("Testing odd numbers: " + 1 + ", " + 3);
+        OddNumbersExterminator test = new OddNumbersExterminator();
+        ArrayList<Integer> result = test.exterminate(numbers);
         //Then
-        Assert.assertFalse(numbers.contains(1));
-        Assert.assertFalse(numbers.contains(3));
+        Assert.assertEquals(expectedList, result);
     }
 }
