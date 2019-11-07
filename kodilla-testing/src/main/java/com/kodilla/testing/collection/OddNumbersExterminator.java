@@ -2,14 +2,10 @@ package com.kodilla.testing.collection;
 
 import java.util.ArrayList;
 
-public class OddNumbersExterminator {
-    private int m;
-
-    public OddNumbersExterminator(int m) {
-        this.m = m;
-    }
+public class OddNumbersExterminator<size> {
 
     ArrayList<Integer> numbers = new ArrayList<Integer>();
+    int size = numbers.size();
 
     public void exterminate(ArrayList<Integer> numbers) {
         for (int n = 0; n < numbers.size(); n++) {

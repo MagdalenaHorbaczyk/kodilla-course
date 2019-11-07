@@ -28,10 +28,10 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
-        int m = numbers.size();
-
         //Given
-        OddNumbersExterminator test = new OddNumbersExterminator(0);
+        int size = numbers.size();
+        size = 0;
+        OddNumbersExterminator test = new OddNumbersExterminator();
         test.exterminate(numbers);
         //When
         int result = numbers.size();
@@ -45,7 +45,10 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList() {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         //Given
-        OddNumbersExterminator test = new OddNumbersExterminator(5);
+        OddNumbersExterminator test = new OddNumbersExterminator();
+        int size = numbers.size();
+        size = 5;
+
         //When
         test.exterminate(numbers);
         System.out.println("Testing odd number: " + 1);
