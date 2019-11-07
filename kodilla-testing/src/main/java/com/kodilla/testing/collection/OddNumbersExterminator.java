@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class OddNumbersExterminator<size> {
 
-    ArrayList<Integer> numbers = new ArrayList<Integer>();
-
     public void exterminate(ArrayList<Integer> numbers) {
         for (int n = 0; n < numbers.size(); n++) {
             numbers.add(n);

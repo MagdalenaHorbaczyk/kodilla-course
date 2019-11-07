@@ -40,13 +40,22 @@ public class CollectionTestSuite {
 
     @Test
     public void testOddNumbersExterminatorNormalList() {
-        ArrayList<Integer> numbers = new ArrayList<Integer>();
         //Given
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
         OddNumbersExterminator test = new OddNumbersExterminator();
         //When
+        for (int n = 0; n < 5; n++) {
+            numbers.add(n);
+            Integer temp = 0;
+            temp = n;
+            if (temp % 2 == 1) {
+                numbers.remove(temp);
+            }
+        }
         test.exterminate(numbers);
-        System.out.println("Testing odd number: " + 1);
+        System.out.println("Testing odd numbers: " + 1 + ", " + 3);
         //Then
         Assert.assertFalse(numbers.contains(1));
+        Assert.assertFalse(numbers.contains(3));
     }
 }
