@@ -27,20 +27,19 @@ public class CollectionTestSuite {
 
     @Test
     public void testOddNumbersExterminatorEmptyList() {
-        ArrayList<Integer> numbers = new ArrayList<>();
         //Given
+        ArrayList<Integer> numbers = new ArrayList<>();
         OddNumbersExterminator test = new OddNumbersExterminator();
-        test.exterminate(numbers);
         //When
-        int result = numbers.size();
-        System.out.println("Testing " + result);
+        ArrayList<Integer> result = test.exterminate(numbers);
         //Then
-        Assert.assertEquals(0, result);
+        Assert.assertEquals(0, result.size());
     }
+
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
-        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        ArrayList<Integer> numbers = new ArrayList<>();
         numbers.add(2);
         numbers.add(5);
         numbers.add(17);
@@ -49,8 +48,7 @@ public class CollectionTestSuite {
         numbers.add(151);
         numbers.add(200);
 
-        ArrayList<Integer> expectedList = new ArrayList<Integer>();
-
+        ArrayList<Integer> expectedList = new ArrayList<>();
         expectedList.add(2);
         expectedList.add(20);
         expectedList.add(200);
