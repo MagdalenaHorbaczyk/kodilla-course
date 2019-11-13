@@ -9,6 +9,10 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class ForumStatisticsTestSuite {
+
+    private Statistics statisticsMock;
+    private ForumStatistics forumStatistics;
+
     @Before
     public void before() {
         System.out.println("Test ForumStatistics: begin");
@@ -32,12 +36,8 @@ public class ForumStatisticsTestSuite {
     @Test
     public void testCalculateAdvStatisticsIfNoPostsWithMock() {
         //Given
-        Statistics statisticsMock = mock(Statistics.class);
-        ForumStatistics forumStatistics = new ForumStatistics();
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            list.add("name" + 1);
-        }
+        setUp();
+        ArrayList<String> list = initList(5);
         when(statisticsMock.usersNames()).thenReturn(list);
         when(statisticsMock.postsCount()).thenReturn(0);
         when(statisticsMock.commentsCount()).thenReturn(10);
@@ -52,15 +52,16 @@ public class ForumStatisticsTestSuite {
         assertEquals(2, forumStatistics.getCommentsAvgPerUser(), 0.01);
     }
 
+    private void setUp() {
+        statisticsMock = mock(Statistics.class);
+        forumStatistics = new ForumStatistics();
+    }
+
     @Test
     public void testCalculateAdvStatisticsIfThousandPostsWithMock() {
         //Given
-        Statistics statisticsMock = mock(Statistics.class);
-        ForumStatistics forumStatistics = new ForumStatistics();
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            list.add("name" + 1);
-        }
+        setUp();
+        ArrayList<String> list = initList(5);
         when(statisticsMock.usersNames()).thenReturn(list);
         when(statisticsMock.postsCount()).thenReturn(1000);
         when(statisticsMock.commentsCount()).thenReturn(5000);
@@ -75,15 +76,19 @@ public class ForumStatisticsTestSuite {
         assertEquals(1000, forumStatistics.getCommentsAvgPerUser(), 0.01);
     }
 
+    private ArrayList<String> initList(int listSize) {
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < listSize; i++) {
+            list.add("name" + 1);
+        }
+        return list;
+    }
+
     @Test
     public void testCalculateAdvStatisticsIfNoCommentsWithMock() {
         //Given
-        Statistics statisticsMock = mock(Statistics.class);
-        ForumStatistics forumStatistics = new ForumStatistics();
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            list.add("name" + 1);
-        }
+        setUp();
+        ArrayList<String> list = initList(5);
         when(statisticsMock.usersNames()).thenReturn(list);
         when(statisticsMock.postsCount()).thenReturn(1000);
         when(statisticsMock.commentsCount()).thenReturn(0);
@@ -101,12 +106,8 @@ public class ForumStatisticsTestSuite {
     @Test
     public void testCalculateAdvStatisticsIfCommentsLessThanPostsWithMock() {
         //Given
-        Statistics statisticsMock = mock(Statistics.class);
-        ForumStatistics forumStatistics = new ForumStatistics();
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            list.add("name" + 1);
-        }
+        setUp();
+        ArrayList<String> list = initList(5);
         when(statisticsMock.usersNames()).thenReturn(list);
         when(statisticsMock.postsCount()).thenReturn(1000);
         when(statisticsMock.commentsCount()).thenReturn(500);
@@ -124,12 +125,8 @@ public class ForumStatisticsTestSuite {
     @Test
     public void testCalculateAdvStatisticsIfCommentsMoreThanPostsWithMock() {
         //Given
-        Statistics statisticsMock = mock(Statistics.class);
-        ForumStatistics forumStatistics = new ForumStatistics();
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            list.add("name" + 1);
-        }
+        setUp();
+        ArrayList<String> list = initList(5);
         when(statisticsMock.usersNames()).thenReturn(list);
         when(statisticsMock.postsCount()).thenReturn(500);
         when(statisticsMock.commentsCount()).thenReturn(1000);
@@ -147,12 +144,8 @@ public class ForumStatisticsTestSuite {
     @Test
     public void testCalculateAdvStatisticsIfNoUsersWithMock() {
         //Given
-        Statistics statisticsMock = mock(Statistics.class);
-        ForumStatistics forumStatistics = new ForumStatistics();
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 0; i++) {
-            list.add("name" + 1);
-        }
+        setUp();
+        ArrayList<String> list = initList(0);
         when(statisticsMock.usersNames()).thenReturn(list);
         when(statisticsMock.postsCount()).thenReturn(500);
         when(statisticsMock.commentsCount()).thenReturn(1000);
@@ -171,12 +164,8 @@ public class ForumStatisticsTestSuite {
     @Test
     public void testCalculateAdvStatisticsIfHundredUsersWithMock() {
         //Given
-        Statistics statisticsMock = mock(Statistics.class);
-        ForumStatistics forumStatistics = new ForumStatistics();
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
-            list.add("name" + 1);
-        }
+        setUp();
+        ArrayList<String> list = initList(100);
         when(statisticsMock.usersNames()).thenReturn(list);
         when(statisticsMock.postsCount()).thenReturn(500);
         when(statisticsMock.commentsCount()).thenReturn(1000);
