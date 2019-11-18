@@ -8,6 +8,7 @@ public final class Country {
     private final BigDecimal peopleQuantity;
 
     public Country(final String countryName, final BigDecimal peopleQuantity) {
+
         this.countryName = countryName;
         this.peopleQuantity = peopleQuantity;
     }
