@@ -23,6 +23,4 @@ public class FirstChallenge {
             System.out.println("Have a nice day..");
         }
     }
-
-
 }
