@@ -148,8 +148,9 @@ public class BoardTestSuite {
         double average = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .mapToDouble(a -> ChronoUnit.DAYS.between(a.getCreated(), LocalDate.now()))
-                .average().getAsDouble();
+                .mapToLong(a -> ChronoUnit.DAYS.between(a.getCreated(), LocalDate.now()))
+                .average()
+                .getAsDouble();
         //Then
         Assert.assertEquals(10, average, 0.01);
     }
