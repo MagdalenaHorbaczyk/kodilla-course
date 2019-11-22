@@ -8,6 +8,21 @@ import java.util.Set;
 public class FlightSearching {
     String departureAirport = "Wrocław";
 
+    public boolean findFlight(Flight flight) throws RouteNotFoundException {
+        Map<String, Boolean> flights = new HashMap<>();
+        flights.put("Palermo", true);
+        flights.put("Gdańsk", false);
+        flights.put("Moscow", false);
+
+        String arrivalAirport = flight.getArrivalAirport();
+        if (flights.containsKey(arrivalAirport)) {
+            System.out.println("Flight from " + departureAirport + " to " + arrivalAirport);
+        } else {
+            throw new RouteNotFoundException(flight);
+        }
+        return flights.get(arrivalAirport);
+    }
+
     public static void main(String[] args) {
         Set<Flight> set = new HashSet<>();
         set.add(new Flight("Wrocław", "Palermo"));
@@ -24,20 +39,5 @@ public class FlightSearching {
                 System.out.println("Airport in " + flight.getArrivalAirport() + " not found!");
             }
         }
-    }
-
-    public boolean findFlight(Flight flight) throws RouteNotFoundException {
-        Map<String, Boolean> flights = new HashMap<>();
-        flights.put("Palermo", true);
-        flights.put("Gdańsk", false);
-        flights.put("Moscow", false);
-
-        String arrivalAirport = flight.getArrivalAirport();
-        if (flights.containsKey(arrivalAirport)) {
-            System.out.println("Flight from " + departureAirport + " to " + arrivalAirport);
-        } else {
-            throw new RouteNotFoundException(flight);
-        }
-        return flights.get(arrivalAirport);
     }
 }
