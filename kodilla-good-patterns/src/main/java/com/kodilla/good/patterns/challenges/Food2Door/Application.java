@@ -8,9 +8,16 @@ public class Application {
         LinkedList<Order> orders = list.retrieve();
 
         for (Order order : orders) {
-            OrderDto orderDto = order.getVendor().process(order);
+            ProductOrderService productOrderService = new ProductOrderService(new OrderService() {
+                @Override
+                public boolean order(Product product, int qty) {
+                    return true;
+                }
+            });
+            OrderDto orderDto = productOrderService.process(order);
             if (orderDto.isOrdered()) {
                 System.out.println("Order information: "
+                        + "\n" + orderDto.getVendor()
                         + "\n" + orderDto.getUser()
                         + "\nproduct: " + orderDto.getProduct().getProductName()
                         + "\nquantity: " + orderDto.getQty());

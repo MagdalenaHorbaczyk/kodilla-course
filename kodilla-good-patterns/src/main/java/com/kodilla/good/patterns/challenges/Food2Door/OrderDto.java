@@ -31,7 +31,8 @@ public class OrderDto {
         return qty;
     }
 
-    public User getUser(){
+    public User getUser() {
         return user;
     }
+
 }

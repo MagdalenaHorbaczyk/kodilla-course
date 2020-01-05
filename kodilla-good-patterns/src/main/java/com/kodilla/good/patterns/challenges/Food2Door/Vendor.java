@@ -1,8 +1,19 @@
 package com.kodilla.good.patterns.challenges.Food2Door;
 
-public interface Vendor {
+public class Vendor {
+    public String vendorName;
 
-    OrderDto process(Order order);
+    public Vendor(String vendorName) {
+        this.vendorName = vendorName;
+    }
 
-    String getVendorName();
+    public String getVendorName() {
+        return vendorName;
+    }
+
+    @Override
+    public String toString() {
+        return "vendor: " +
+                vendorName;
+    }
 }

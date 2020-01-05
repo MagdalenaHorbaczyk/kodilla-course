@@ -9,9 +9,9 @@ public class OrderRetriever {
 
     public LinkedList<Order> retrieve() {
 
-        Vendor extraFoodShop = new ExtraFoodShop((product, qty) -> true);
-        Vendor glutenFreeShop = new GlutenFreeShop((product, qty) -> true);
-        Vendor healthyShop = new HealthyShop((product, qty) -> true);
+        Vendor extraFoodShop = new Vendor("Extra Food Shop");
+        Vendor glutenFreeShop = new Vendor("Gluten Free Shop");
+        Vendor healthyShop = new Vendor("Healthy Shop");
         Product amaranthus = new Product(("amaranthus"));
         Product millet_flakes = new Product("millet flakes");
         Product avocado = new Product("avocado");
@@ -24,9 +24,9 @@ public class OrderRetriever {
         list.add(new Order(user2, millet_flakes, 12, LocalDateTime.of(2020, 1, 1, 9, 39, 41)
                 , glutenFreeShop));
         list.add(new Order(user3, amaranthus, 3, LocalDateTime.of(2020, 1, 2, 9, 39, 41)
-                , extraFoodShop));
-        list.add(new Order(user1, avocado, 5, LocalDateTime.of(2020, 1, 3, 9, 39, 41)
                 , healthyShop));
+        list.add(new Order(user1, avocado, 5, LocalDateTime.of(2020, 1, 3, 9, 39, 41)
+                , extraFoodShop));
         list.add(new Order(user1, millet_flakes, 1, LocalDateTime.of(2020, 1, 1, 8, 39, 41)
                 , glutenFreeShop));
         list.add(new Order(user2, amaranthus, 7, LocalDateTime.of(2020, 1, 1, 7, 39, 41)
