@@ -15,8 +15,7 @@ public class CalculatorTestSuite {
     @Test
     public void testCalculations() {
         //Given
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext("com.kodilla.spring");
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Calculator calculator = context.getBean(Calculator.class);
         //When
         double addResult = calculator.add(10, 2);
