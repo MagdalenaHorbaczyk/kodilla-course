@@ -10,7 +10,7 @@ public class Animal {
     public int consumedFood;
     public int consumedWater;
 
-    public Animal (int food, int water, String name, int valueFood, int valueWater, int value) {
+    public Animal(int food, int water, String name, int valueFood, int valueWater, int value) {
         this.food = food;
         this.water = water;
         this.valueFood = valueFood;
@@ -44,10 +44,10 @@ public class Animal {
     }
 
     public void feed() {
-        food = food-valueFood;
-        water = water-valueWater;
-        consumedFood+= valueFood;
-        consumedWater+= valueWater;
+        food = food - valueFood;
+        water = water - valueWater;
+        consumedFood += valueFood;
+        consumedWater += valueWater;
     }
 
     public void addFood() {

@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Application {
-    public static void main (String[] args) throws java.lang.Exception {
-        Student s1 = new Student("Igor", "Nowak","3c");
-        Student s2 = new Student("Alan", "Bartoszewski","3c");
-        Student s3 = new Student("Rita", "Celinowska","2a");
-        Student s4 = new Student("Dżenifer", "Kot","5d");
-        Student s5 = new Student("Kewin", "Kowalski","6b");
+    public static void main(String[] args) throws java.lang.Exception {
+        Student s1 = new Student("Igor", "Nowak", "3c");
+        Student s2 = new Student("Alan", "Bartoszewski", "3c");
+        Student s3 = new Student("Rita", "Celinowska", "2a");
+        Student s4 = new Student("Dżenifer", "Kot", "5d");
+        Student s5 = new Student("Kewin", "Kowalski", "6b");
 
         Notes n1 = new Notes();
         Notes n2 = new Notes();
@@ -37,7 +37,7 @@ public class Application {
         myMap.put(s4, n4);
         myMap.put(s5, n5);
 
-        for(Map.Entry<Student, Notes> entry : myMap.entrySet()) {
+        for (Map.Entry<Student, Notes> entry : myMap.entrySet()) {
             System.out.println("Średnia ocen ucznia : " + entry.getKey() + ": " + entry.getValue().average());
         }
     }

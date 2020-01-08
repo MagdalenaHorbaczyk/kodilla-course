@@ -15,9 +15,9 @@ public class Notes {
 
     public double average() {
         double total = 0;
-        for(int grade: grades) {
-            total+= grade;
+        for (int grade : grades) {
+            total += grade;
         }
-        return total/grades.size();
+        return total / grades.size();
     }
 }

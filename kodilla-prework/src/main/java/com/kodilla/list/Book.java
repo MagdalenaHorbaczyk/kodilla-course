@@ -2,7 +2,7 @@ package com.kodilla.list;
 
 public class Book {
     private String title;
-    private int	publYear;
+    private int publYear;
 
     public Book(String title, int publYear) {
         this.title = title;

@@ -19,11 +19,11 @@ public class Student {
 
     @Override
     public int hashCode() {
-        return Integer.parseInt(classId.substring(0,1));
+        return Integer.parseInt(classId.substring(0, 1));
     }
 
     @Override
     public String toString() {
-        return firstName + "  " + lastName +  " ("+ classId + ")";
+        return firstName + "  " + lastName + " (" + classId + ")";
     }
 }

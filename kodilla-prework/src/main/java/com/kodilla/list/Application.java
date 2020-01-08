@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 public class Application {
-    public static void main (String[] args) throws java.lang.Exception {
+    public static void main(String[] args) throws java.lang.Exception {
 
         ArrayList<Integer> grade = new ArrayList<Integer>();
         grade.add(5);
@@ -22,14 +22,14 @@ public class Application {
         grade.add(5);
 
         double total = 0;
-        for(int n=0; n<grade.size(); n++) {
+        for (int n = 0; n < grade.size(); n++) {
             System.out.println("Grade " + n + " of Informatics: " + grade.get(n));
             total += grade.get(n);
         }
 
         System.out.println("Maximum grade: " + Collections.max(grade));
         System.out.println("Minimum grade: " + Collections.min(grade));
-        System.out.println("Average grade of Informatics in Highschool: " +(total-Collections.max(grade)-Collections.min(grade))/grade.size());
+        System.out.println("Average grade of Informatics in Highschool: " + (total - Collections.max(grade) - Collections.min(grade)) / grade.size());
 
         LinkedList<Book> book = new LinkedList<Book>();
         Book position1 = new Book("Autostopem przez Galaktykę", 1986);
@@ -42,8 +42,8 @@ public class Application {
         book.add(position3);
         book.add(position4);
 
-        for(Book position : book){
-            if(position.getPublYear() < 2000){
+        for (Book position : book) {
+            if (position.getPublYear() < 2000) {
                 System.out.println(position.getTitle());
             }
         }

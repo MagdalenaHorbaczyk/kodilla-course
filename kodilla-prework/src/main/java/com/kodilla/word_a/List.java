@@ -7,11 +7,11 @@ public class List {
     ArrayList<String> even = new ArrayList<String>();
     ArrayList<String> odd = new ArrayList<String>();
 
-    public void separate(ArrayDeque<String> theWord){
+    public void separate(ArrayDeque<String> theWord) {
         String temporaryWord = null;
-        while(theWord.size()>0){
+        while (theWord.size() > 0) {
             temporaryWord = theWord.poll();
-            if(temporaryWord.length() %2 == 0){
+            if (temporaryWord.length() % 2 == 0) {
                 even.add(temporaryWord);
                 System.out.println("Parzyste: " + temporaryWord);
             } else {

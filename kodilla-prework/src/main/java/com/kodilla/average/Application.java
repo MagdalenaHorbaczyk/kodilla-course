@@ -1,7 +1,7 @@
 package com.kodilla.average;
 
 public class Application {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         int[] numbers = new int[20];
         numbers[0] = 20;
@@ -25,16 +25,16 @@ public class Application {
         numbers[18] = 2;
         numbers[19] = 2;
 
-        for(int i=0; i < numbers.length; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             System.out.println("Liczba elementu tablicy[" + i + "] = " + numbers[i]);
         }
 
         double total = 0;
         for (int counter = 0; counter < numbers.length; counter++) {
-            total+=numbers[counter];
+            total += numbers[counter];
         }
 
-        System.out.println("Średnia wartość wynosi " + total/numbers.length);
+        System.out.println("Średnia wartość wynosi " + total / numbers.length);
 
     }
 }

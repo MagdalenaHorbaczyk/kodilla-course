@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class ForumTestSuite {
     @Test
-    public void testCaseUsername(){
+    public void testCaseUsername() {
         //Given
         SimpleUser simpleUser = new SimpleUser("theForumUser");
         //When

@@ -17,7 +17,7 @@ public class Book {
 
     public boolean equals(Object o) {
         Book e = (Book) o;
-        return (title.equals(e.getTitle())) && (author.equals(e.getAuthor()))&&(year.equals(e.getYear()));
+        return (title.equals(e.getTitle())) && (author.equals(e.getAuthor())) && (year.equals(e.getYear()));
     }
 
     public String getTitle() {

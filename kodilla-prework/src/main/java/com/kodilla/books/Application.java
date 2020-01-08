@@ -3,7 +3,7 @@ package com.kodilla.books;
 import java.util.ArrayDeque;
 
 public class Application {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Book b1 = new Book("Autostopem przez Galaktykę", "Douglas Adams", 1986);
         Book b2 = new Book("Czy androidy śnią o elektrycznych owcach?", "Philip K. Dick", 1968);
         Book b3 = new Book("Tytus, Romek i A'Tomek. Księga III", "Henryk Chmielewski", 1968);

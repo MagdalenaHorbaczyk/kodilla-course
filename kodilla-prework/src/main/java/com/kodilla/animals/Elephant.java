@@ -7,14 +7,14 @@ public class Elephant extends Animal {
 
     @Override
     public void feed() {
-        food = food-valueFood;
-        water = water-valueWater;
-        consumedFood+= valueFood;
-        consumedWater+= valueWater;
+        food = food - valueFood;
+        water = water - valueWater;
+        consumedFood += valueFood;
+        consumedWater += valueWater;
     }
 
     @Override
     public String toString() {
-        return  super.toString() + " " + name + " - ilość skonsumowanego dotychczas pożywienia oraz wody: " +"jedzenie: " + consumedFood + ", woda: " + consumedWater + ". ";
+        return super.toString() + " " + name + " - ilość skonsumowanego dotychczas pożywienia oraz wody: " + "jedzenie: " + consumedFood + ", woda: " + consumedWater + ". ";
     }
 }
