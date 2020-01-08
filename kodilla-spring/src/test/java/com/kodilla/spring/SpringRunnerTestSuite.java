@@ -50,4 +50,16 @@ public class SpringRunnerTestSuite {
         //Then
         Assert.assertEquals("This is a square.", name);
     }
+
+    @Test
+    public void testShapeLoadedIntoContainer() {
+        //Given
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Shape shape = (Shape)context.getBean("chosenShape");
+        //When
+        String name = shape.getShapeName();
+        //Then
+        System.out.println("Chosen shape says: " + name);
+    }
 }
