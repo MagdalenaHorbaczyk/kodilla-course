@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/kodilla-spring-intro" />
             <option value="$PROJECT_DIR$/kodilla-stream" />
             <option value="$PROJECT_DIR$/kodilla-testing" />
+            <option value="$PROJECT_DIR$/kodilla.patterns" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />
