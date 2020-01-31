@@ -8,13 +8,9 @@ public class Application {
         LinkedList<Order> orders = list.retrieve();
 
         for (Order order : orders) {
-            ProductOrderService productOrderService = new ProductOrderService(new OrderService() {
-                @Override
-                public boolean order(Product product, int qty) {
-                    return true;
-                }
-            });
-            OrderDto orderDto = productOrderService.process(order);
+            OrderDto orderDto = OrderMapper.toOrderDto(order);
+            OrderService orderService = ShopFactory.getShop(orderDto.getVendor());
+            orderService.order(orderDto.getProduct(), orderDto.getQty());
             if (orderDto.isOrdered()) {
                 System.out.println("Order information: "
                         + "\n" + orderDto.getVendor()

@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FlightsRepository {
+    private static final String WROCLAW = "Wroclaw";
+    private static final String GDANSK = "Gdansk";
+
     private final List<Flight> flightsList = new ArrayList<>();
 
     public FlightsRepository() {
-        flightsList.add(new Flight("Wroclaw", "Gdansk"));
+        flightsList.add(new Flight(WROCLAW, GDANSK));
         flightsList.add(new Flight("Wroclaw", "Poznan"));
         flightsList.add(new Flight("Wroclaw", "Sopot"));
         flightsList.add(new Flight("Poznan", "Szczecin"));

@@ -39,6 +39,7 @@ public class LibraryTestSuite {
         System.out.println(clonedLibrary);
         System.out.println(deepClonedLibrary);
         Assert.assertEquals(4, library.getBooks().size());
+        Assert.assertNotNull(clonedLibrary);
         assert clonedLibrary != null;
         Assert.assertEquals(4, clonedLibrary.getBooks().size());
         assert deepClonedLibrary != null;

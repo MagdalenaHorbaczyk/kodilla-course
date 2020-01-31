@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.productsOrderService;
 
 import java.time.LocalDateTime;
 

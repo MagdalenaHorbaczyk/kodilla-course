@@ -1,13 +1,13 @@
 package com.kodilla.good.patterns.challenges.Food2Door;
 
-public class ProductOrderService {
+class ProductOrderService {
     private OrderService orderService;
 
-    public ProductOrderService(OrderService orderService) {
+    ProductOrderService(OrderService orderService) {
         this.orderService = orderService;
     }
 
-    public OrderDto process(Order order) {
+    OrderDto process(Order order) {
         boolean isOrdered = orderService.order(order.getProduct(), order.getQty());
         if (isOrdered) {
             System.out.println("Hello! " + "Order by " + order.getVendor() + " has been completed!");

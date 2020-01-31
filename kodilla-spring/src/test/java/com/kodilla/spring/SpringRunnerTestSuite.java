@@ -1,3 +1,4 @@
+/*
 package com.kodilla.spring;
 
 import com.kodilla.spring.shape.Circle;
@@ -78,3 +79,4 @@ public class SpringRunnerTestSuite {
         System.out.println("<< ===== Beans list ====");
     }
 }
+*/

@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.productsOrderService;
 
 public class ProductOrderService {
     private InformationService informationService;
@@ -18,7 +18,7 @@ public class ProductOrderService {
         if (isOrdered) {
             informationService.inform(orderRequest.getUser(), orderRequest.getProduct());
             orderRepository.createOrder(orderRequest.getUser(), orderRequest.getProduct(), orderRequest.getDateOfOrder());
-            return new OrderDto(orderRequest.getUser(), true);
+                return new OrderDto(orderRequest.getUser(), true);
         } else {
             return new OrderDto(orderRequest.getUser(), false);
         }
