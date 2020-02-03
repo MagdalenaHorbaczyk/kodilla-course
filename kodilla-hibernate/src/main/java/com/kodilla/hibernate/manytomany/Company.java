@@ -5,6 +5,20 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.searchCompanyByThreeFirstChars",
+                query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :COMPANYNAME",
+                resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+                name = "Company.searchCompanyByPartname",
+                query = "SELECT * FROM companies WHERE COMPANY_NAME LIKE :PARTNAME",
+                resultClass = Company.class
+        )
+})
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
