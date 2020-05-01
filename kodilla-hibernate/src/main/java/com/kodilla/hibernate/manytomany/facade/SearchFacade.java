@@ -21,7 +21,7 @@ public final class SearchFacade {
 
     public List<Company> findCompanies(final String letters) throws SearchFacadeException {
         LOGGER.info("Searching companies by partname");
-        List<Company> companies = companyDao.searchCompanyByPartname(letters);
+        List<Company> companies = companyDao.searchCompanyByPartname("%" + letters + "%");
         int companiesAmount = companies.size();
         if (companiesAmount == 0) {
             LOGGER.error(SearchFacadeException.ERR_COMPANY_NOT_FOUND);
