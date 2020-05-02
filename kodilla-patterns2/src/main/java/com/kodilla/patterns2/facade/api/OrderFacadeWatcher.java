@@ -21,7 +21,7 @@ public class OrderFacadeWatcher {
 
     @Around("execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..))")
     public Object measureTime(final ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        Object result;
+       Object result;
         try {
             long begin = System.currentTimeMillis();
             result = proceedingJoinPoint.proceed();
