@@ -85,10 +85,8 @@ public class CrudAppTestSuite {
 
         Thread.sleep(2000);
 
-
         final WebDriverWait webDriverWait = new WebDriverWait(driverTrello, 10);
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span")));
-
 
         result = driverTrello.findElements(By.xpath("//span[@class=\"list-card-title js-card-name\"]")).stream()
                 .filter(theSpan -> theSpan.getText().contains(taskName))
@@ -107,7 +105,6 @@ public class CrudAppTestSuite {
         assertTrue(checkTaskExistsInTrello(taskName));
         deleteTestTaskInCRUDApp(taskName);
     }
-
 
     private void deleteTestTaskInCRUDApp(String taskName) throws InterruptedException {
         driver.navigate().refresh();
