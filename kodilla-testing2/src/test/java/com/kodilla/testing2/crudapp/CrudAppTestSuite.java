@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.Random;
 
+import static org.junit.Assert.assertTrue;
+
 public class CrudAppTestSuite {
     private static final String BASE_URL = "https://magdalenahorbaczyk.github.io/";
     private WebDriver driver;
@@ -68,30 +70,30 @@ public class CrudAppTestSuite {
 
     private boolean checkTaskExistsInTrello(String taskName) throws InterruptedException {
         final String TRELLO_URL = "https://trello.com/login";
-        boolean result;
+        boolean result = false;
         WebDriver driverTrello = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
         driverTrello.get(TRELLO_URL);
 
         driverTrello.findElement(By.id("user")).sendKeys("user");
         driverTrello.findElement(By.id("password")).sendKeys("password");
-        driverTrello.findElement(By.id("login")).submit();
+        WebElement el = driverTrello.findElement(By.id("login"));
+        el.submit();
 
-        Thread.sleep(2000);
+        Thread.sleep(4000);
+
+        driverTrello.findElement(By.id("password")).sendKeys("password");
+        driverTrello.findElement(By.id("login-submit")).submit();
+
+        Thread.sleep(4000);
 
         driverTrello.findElements(By.xpath("//a[@class=\"board-tile\"]")).stream()
-                .filter(aHref -> aHref.findElements(By.xpath(".//span[@title=\"Kodilla Application\"]"))
-                        .size() > 0)
-                .forEach(aHref -> aHref.click());
+                .filter(aHref -> aHref.findElements(By.xpath(".//div[@title=\"Kodilla Application\"]")).size() > 0)
+                .forEach(WebElement::click);
 
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
-        final WebDriverWait webDriverWait = new WebDriverWait(driverTrello, 10);
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span")));
-
-        result = driverTrello.findElements(By.xpath("//span[@class=\"list-card-title js-card-name\"]")).stream()
-                .filter(theSpan -> theSpan.getText().contains(taskName))
-                .collect(Collectors.toList())
-                .size() > 0;
+        result = driverTrello.findElements(By.xpath("//span")).stream()
+                .anyMatch(theSpan -> theSpan.getText().equals(taskName));
 
         driverTrello.close();
 
