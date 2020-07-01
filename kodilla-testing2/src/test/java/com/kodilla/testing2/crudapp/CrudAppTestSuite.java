@@ -66,6 +66,7 @@ public class CrudAppTestSuite {
                     buttonCreateCard.click();
                 });
         Thread.sleep(5000);
+        driver.switchTo().alert().accept();
     }
 
     private boolean checkTaskExistsInTrello(String taskName) throws InterruptedException {
